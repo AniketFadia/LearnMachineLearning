@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_intuition"
+        android:enabled="true"
+        android:icon="@drawable/ic_school"
+        android:title="Introduction"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_example"
+        android:enabled="true"
+        android:icon="@drawable/ic_example"
+        android:title="Example"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_math"
+        android:enabled="true"
+        android:icon="@drawable/ic_math"
+        android:title="Statistics"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_code"
+        android:enabled="true"
+        android:icon="@drawable/ic_code"
+        android:title="Code"
+        app:showAsAction="ifRoom" />
+
+   <!-- <item
+        android:id="@+id/action_discussion"
+        android:enabled="true"
+        android:icon="@drawable/ic_discussion"
+        android:title="Discussion"
+        app:showAsAction="ifRoom" />-->
+</menu>
+
+    <!--
+    <?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <item
+            android:id ="@+id/action_intuition"
+            android:enabled="true"
+            android:icon="@drawable/ic_school"
+            android:title="Intuition"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id ="@+id/action_example"
+            android:enabled="true"
+            android:icon="@drawable/ic_example"
+            android:title="Example"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id ="@+id/action_math"
+            android:enabled="true"
+            android:icon="@drawable/ic_math"
+            android:title="Statistics"
+            app:showAsAction="ifRoom"/>
+
+        <item
+            android:id ="@+id/action_code"
+            android:enabled="true"
+            android:icon="@drawable/ic_code"
+            android:title="Code"
+            app:showAsAction="ifRoom"/>
+
+
+    </menu>-->
+

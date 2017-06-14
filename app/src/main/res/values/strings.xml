@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Machine Learning</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <string name="one">Hello fragment one</string>
+
+    <string name="second">Hello fragment second</string>
+
+    <string name="three">Hello blank three</string>
+
+    <string name="four">Hello blank four</string>
+
+    <string name="five">Hello blank five</string>
+
+    <string name="common">Yeay</string>
+
+    <string name="bookmark">Saved Bookmarks</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
