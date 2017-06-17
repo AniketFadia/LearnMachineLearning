@@ -11,7 +11,7 @@ import android.content.ContentValues;
 
 public class MachineLearningDatabaseHelper extends SQLiteOpenHelper{
     private static final String DB_NAME = "machinelearning"; // the name of our database
-    private static final int DB_VERSION = 3; // the version of the database
+    private static final int DB_VERSION = 4; // the version of the database
 
     MachineLearningDatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
@@ -65,6 +65,10 @@ public class MachineLearningDatabaseHelper extends SQLiteOpenHelper{
             insertSubTopics(db, 3, "Logistic Regression");
             insertSubTopics(db, 3, "K Nearest Neighour");
             insertSubTopics(db, 3, "Support Vector Machines");
+        }
+        if(oldVersion < 4){
+            db.execSQL("ALTER TABLE SUB_TOPICS ADD COLUMN BOOKMARK INTEGER DEFAULT 0;");
+
         }
     }
 }

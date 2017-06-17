@@ -24,6 +24,7 @@ public class FirstFragment extends Fragment {
     private int page;
     private SQLiteDatabase db;
     private Cursor cursor;
+    private int[] arr = {3, 4, 4, 3};
 
 
     // newInstance constructor for creating fragment with arguments
@@ -34,6 +35,15 @@ public class FirstFragment extends Fragment {
         args.putString("someTitle", title);
         fragmentFirst.setArguments(args);
         return fragmentFirst;
+    }
+
+    int getCount(int i){
+        int count = 0;
+        if(i == -1) return 0;
+        for(int j = 0; j <= i; j++){
+            count += arr[j];
+        }
+        return count;
     }
 
     // Store instance variables based on arguments passed
@@ -56,9 +66,27 @@ public class FirstFragment extends Fragment {
                                             View v,
                                             int position,
                                             long id) {
-                        //if (position == 0) {
-                            Intent intent = new Intent(getActivity(), IndividualContentActivity.class);
-                            startActivity(intent);
+
+                        try{
+                            SQLiteOpenHelper mlDatabaseHelper = new MachineLearningDatabaseHelper(getActivity());
+
+                            db = mlDatabaseHelper.getReadableDatabase();
+
+                            cursor = db.query("SUB_TOPICS", new String[] {"NAME"}, "_id = ?", new String[] {Integer.toString(getCount(page - 1) + (position) + 1)}, null, null, null);
+
+                        } catch(SQLiteException e) {
+                            Toast toast = Toast.makeText(getActivity(), "Database unavailable", Toast.LENGTH_SHORT);
+                            toast.show();
+                        }
+                        String topicTitle = "";
+                        if(cursor.moveToFirst()){
+                            topicTitle = cursor.getString(0);
+                        }
+
+                        Intent intent = new Intent(getActivity(), IndividualContentActivity.class);
+                        intent.putExtra(IndividualContentActivity.EXTRA_MESSAGE, topicTitle);
+                        startActivity(intent);
+
                     }
         };
 
